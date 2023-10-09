@@ -12,16 +12,19 @@ public class MatrixStat {
                     sum +=m.ReadMatrix().get(i).get(j);
                 }
             }
-            System.out.println(sum);
+            System.out.println("Sum value = " + sum);
         }
         public void MiddleValue(){
-            int sum = 0;
+            double sum = 0;
+            int counter = 0;
             for (int i = 0; i < m.ReadMatrix().size(); i++) {
                 for (int j = 0; j <  m.ReadMatrix().get(i).size(); j++) {
                     sum +=m.ReadMatrix().get(i).get(j);
+                    counter++;
                 }
             }
-            System.out.println(sum/(m.ColumnNumber()*m.LineNumber()));
+            String str = String.format("%.2f",sum / counter);
+            System.out.println("Middle value = " + str);
         }
         public void MaxValue(){
             int max = 0;
@@ -31,7 +34,7 @@ public class MatrixStat {
                         max =m.ReadMatrix().get(i).get(j);
                 }
             }
-            System.out.println(max);
+            System.out.println("Max value = " + max);
         }
         public void NotNull(){
             int counter = 0;
@@ -41,7 +44,7 @@ public class MatrixStat {
                         counter++;
                 }
             }
-            System.out.println(counter);
+            System.out.println("NotNull = " + counter);
         }
         public void Do(){
             MaxValue();
