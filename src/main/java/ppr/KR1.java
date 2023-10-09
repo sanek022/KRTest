@@ -1,7 +1,4 @@
-package afro;
-
-import java.util.ArrayList;
-import java.util.Scanner;
+package ppr;
 
 public class KR1 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package afro;
+package ppr;
 
 public class Program{
 

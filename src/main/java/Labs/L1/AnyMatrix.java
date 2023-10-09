@@ -14,7 +14,7 @@ public abstract class AnyMatrix implements Matrix {
     @Override
     public void WriteMatrix(ArrayList<Vector> vectors) {
         for (int i = 0; i < vectors.size(); i++) {
-            //vectors.get(i).WriteVector();
+            this.vectors = vectors;
         }
     }
 

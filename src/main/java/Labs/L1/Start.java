@@ -5,7 +5,23 @@ import java.util.Random;
 
 public class Start {
     public static void main(String[] args) {
-        StandardVector sdV = new StandardVector();
+        StandardMatrix standardMatrix = new StandardMatrix();
+        MatrixInitialization.FillMatrix(standardMatrix, 5, 7);
+        standardMatrix.ReadMatrix();
+        standardMatrix.ColumnNumber();
+        standardMatrix.LineNumber();
+        class MatrixStat{
+            Matrix m;
+            public MatrixStat(Matrix m) {
+                this.m = m;
+            }
+            public void Sum(){
+                ;
+            }
+            public void MiddleValue(){}
+            public void MaxValue(){}
+        }
+      /*  StandardVector sdV = new StandardVector();
         ArrayList <Integer>list = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i < 20; i++){
@@ -25,7 +41,7 @@ public class Start {
         lists.add(list1);  lists.add(list2);
         for (ArrayList<Integer> integers : lists) {
             System.out.println(integers);
-        }
+        }*/
 
     }
 }
