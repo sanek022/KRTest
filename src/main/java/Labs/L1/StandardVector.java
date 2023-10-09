@@ -9,23 +9,23 @@ public class StandardVector implements Vector {
 
     @Override
     public void ReadVector() {
-        System.out.println(this.valueList);
+        System.out.println(valueList);
     }
 
     @Override
     public void WriteVector(ArrayList<Integer> arrayList) {
-       if(this.valueList.size() == 0){
-           this.valueList = arrayList;
+       if(valueList.size() == 0){
+           valueList = arrayList;
        }else {
            for (int i : arrayList){
-           this.valueList.add(arrayList.get(i));
+           valueList.add(arrayList.get(i));
            }
        }
     }
 
     @Override
     public String LengthVector() {
-        System.out.println(this.valueList.size());
+        //System.out.println(this.valueList.size());
         return String.valueOf(valueList.size());
     }
 }

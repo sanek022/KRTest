@@ -5,13 +5,19 @@ import java.util.Random;
 
 public class MatrixInitialization {
 
-    public void FillMatrix(Matrix m, int notNull, int maxValue){
-        Random random = new Random(maxValue);
+    public static void FillMatrix(Matrix m, int notNull, int maxValue){
+        Random random = new Random();
+        ArrayList<Vector> vectors = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
+            vectors.add(new SparseVector());
+
+            ArrayList<Integer> list = new ArrayList<>();
             for (int j = 0; j < 5; j++) {
-                ArrayList<Integer> list = new ArrayList<>();
+                list.add(random.nextInt(maxValue));
             }
+            vectors.get(i).WriteVector(list);
         }
+        m.WriteMatrix(vectors);
        // m.WriteMatrix();
     }
 }
