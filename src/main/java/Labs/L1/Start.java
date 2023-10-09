@@ -6,47 +6,13 @@ import java.util.Random;
 public class Start {
     public static void main(String[] args) {
         StandardMatrix standardMatrix = new StandardMatrix();
-        MatrixInitialization.FillMatrix(standardMatrix, 5, 7);
+        MatrixInitialization.FillMatrix(standardMatrix, 5, 9);
         standardMatrix.Show();
-        standardMatrix.ReadMatrix();
-        standardMatrix.ColumnNumber();
-        standardMatrix.LineNumber();
+        MatrixStat matrixStat = new MatrixStat(standardMatrix);
+        matrixStat.Do();
 
 
-        class MatrixStat{
-            Matrix m;
-            public MatrixStat(Matrix m) {
-                this.m = m;
-            }
-            public void Sum(){
-                int sum = 0;
-                for (int i = 0; i < m.ReadMatrix().size(); i++) {
-                    for (int j = 0; j <  m.ReadMatrix().get(i).size(); j++) {
-                        sum +=m.ReadMatrix().get(i).get(j);
-                    }
-                }
-                System.out.println(sum);
-            }
-            public void MiddleValue(){
-                int sum = 0;
-                for (int i = 0; i < m.ReadMatrix().size(); i++) {
-                    for (int j = 0; j <  m.ReadMatrix().get(i).size(); j++) {
-                        sum +=m.ReadMatrix().get(i).get(j);
-                    }
-                }
-                System.out.println(sum/(m.ColumnNumber()*m.LineNumber()));
-            }
-            public void MaxValue(){
-                int max = 0;
-                for (int i = 0; i < m.ReadMatrix().size(); i++) {
-                    for (int j = 0; j <  m.ReadMatrix().get(i).size(); j++) {
-                        if(max < m.ReadMatrix().get(i).get(j))
-                            max =m.ReadMatrix().get(i).get(j);
-                    }
-                }
-                System.out.println(max);
-            }
-        }
+
       /*  StandardVector sdV = new StandardVector();
         ArrayList <Integer>list = new ArrayList<>();
         Random random = new Random();
@@ -68,9 +34,6 @@ public class Start {
         for (ArrayList<Integer> integers : lists) {
             System.out.println(integers);
         }*/
-        MatrixStat matrixStat = new MatrixStat(standardMatrix);
-        matrixStat.Sum();
-        matrixStat.MaxValue();
-        matrixStat.MiddleValue();
+
     }
 }

@@ -9,6 +9,7 @@ public class MatrixInitialization {
         Random random = new Random();
         ArrayList<Vector> vectors = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
+
             vectors.add(new SparseVector());
 
             ArrayList<Integer> list = new ArrayList<>();

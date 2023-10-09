@@ -33,13 +33,13 @@ public abstract class AnyMatrix implements Matrix {
                max = Integer.parseInt(vector.LengthVector());
            }
         }
-        System.out.println(max);
+        //System.out.println(max);
         return max;
     }
 
     @Override
     public int ColumnNumber() {
-        System.out.println(vectors.size());
+        //System.out.println(vectors.size());
         return vectors.size();
     }
 }
