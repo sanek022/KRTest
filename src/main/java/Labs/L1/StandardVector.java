@@ -8,8 +8,9 @@ public class StandardVector implements Vector {
 
 
     @Override
-    public void ReadVector() {
-        System.out.println(valueList);
+    public ArrayList<Integer> ReadVector() {
+        //System.out.println(valueList);
+        return valueList;
     }
 
     @Override

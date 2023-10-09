@@ -4,11 +4,18 @@ import java.util.ArrayList;
 
 public abstract class AnyMatrix implements Matrix {
     ArrayList<Vector> vectors = new ArrayList<>();
-    @Override
-    public void ReadMatrix() {
+    public void Show(){
         for (Vector vector : vectors) {
-            vector.ReadVector();
+            System.out.println(vector.ReadVector());
         }
+    }
+    @Override
+    public ArrayList<ArrayList<Integer>> ReadMatrix() {
+        ArrayList<ArrayList<Integer>> list =  new ArrayList<>();
+        for (Vector vector : vectors) {
+              list.add(vector.ReadVector());
+        }
+        return list;
     }
 
     @Override
@@ -19,7 +26,7 @@ public abstract class AnyMatrix implements Matrix {
     }
 
     @Override
-    public void LineNumber() {
+    public int LineNumber() {
         int max = 0;
         for (Vector vector: vectors) {
            if(Integer.parseInt(vector.LengthVector()) > max){
@@ -27,10 +34,12 @@ public abstract class AnyMatrix implements Matrix {
            }
         }
         System.out.println(max);
+        return max;
     }
 
     @Override
-    public void ColumnNumber() {
+    public int ColumnNumber() {
         System.out.println(vectors.size());
+        return vectors.size();
     }
 }

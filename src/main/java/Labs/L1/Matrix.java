@@ -3,8 +3,8 @@ package Labs.L1;
 import java.util.ArrayList;
 
 public interface Matrix {
-    void ReadMatrix();
+    ArrayList<ArrayList<Integer>> ReadMatrix();
     void WriteMatrix(ArrayList<Vector> vectors);
-    void LineNumber();
-    void ColumnNumber();
+    int LineNumber();
+    int ColumnNumber();
 }
