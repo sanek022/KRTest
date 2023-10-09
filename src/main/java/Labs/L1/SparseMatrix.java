@@ -1,4 +1,7 @@
 package Labs.L1;
 
-public class SparseMatrix {
+import java.util.ArrayList;
+
+public class SparseMatrix extends AnyMatrix{
+
 }

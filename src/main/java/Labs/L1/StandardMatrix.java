@@ -1,4 +1,8 @@
 package Labs.L1;
 
-public class StandardMatrix {
+import java.util.ArrayList;
+
+public class StandardMatrix extends AnyMatrix{
+
+
 }
