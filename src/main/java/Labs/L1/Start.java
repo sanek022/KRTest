@@ -6,21 +6,13 @@ import java.util.Random;
 public class Start {
     public static void main(String[] args) {
         StandardMatrix standardMatrix = new StandardMatrix();
-        MatrixInitialization.FillMatrix(standardMatrix, 5, 7);
-        standardMatrix.ReadMatrix();
-        standardMatrix.ColumnNumber();
-        standardMatrix.LineNumber();
-        class MatrixStat{
-            Matrix m;
-            public MatrixStat(Matrix m) {
-                this.m = m;
-            }
-            public void Sum(){
-                ;
-            }
-            public void MiddleValue(){}
-            public void MaxValue(){}
-        }
+        MatrixInitialization.FillMatrix(standardMatrix, 5, 9);
+        standardMatrix.Show();
+        MatrixStat matrixStat = new MatrixStat(standardMatrix);
+        matrixStat.Do();
+
+
+
       /*  StandardVector sdV = new StandardVector();
         ArrayList <Integer>list = new ArrayList<>();
         Random random = new Random();

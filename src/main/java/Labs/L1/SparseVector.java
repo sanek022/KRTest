@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 public class SparseVector implements Vector{
     ArrayList<Integer> valueList = new ArrayList<>();
+
     @Override
-    public void ReadVector() {
-        System.out.println(valueList);
+    public ArrayList<Integer> ReadVector() {
+        //System.out.println(valueList);
+        return valueList;
     }
     @Override
     public void WriteVector(ArrayList<Integer> arrayList) {
