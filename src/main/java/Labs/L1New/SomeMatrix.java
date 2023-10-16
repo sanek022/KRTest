@@ -2,7 +2,7 @@ package Labs.L1New;
 
 public abstract class SomeMatrix implements IMatrix {
     int colsCount, rowsCount;
-    protected IVector[] vectors;//???
+    protected IVector[] vectors;
     public int GetColsCount(){
         return colsCount;
     }
@@ -24,19 +24,19 @@ public abstract class SomeMatrix implements IMatrix {
         vectors = new IVector[rows];
         for (int i = 0; i < rows; i++)
         {
-            vectors[i]/*вторая скобка?*/ = create(cols);
+            vectors[i]= create(cols);
         }
     }
     public abstract IVector create(int size);
 }
 class RegularMatrix extends SomeMatrix {
 public RegularMatrix(int rows, int cols)  {super(rows, cols); }
-public  IVector create(int size){ return new RegularVector(size);}//???
+public  IVector create(int size){ return new RegularVector(size);}
 
 
 }
 class SparseMatrix extends SomeMatrix {
     public SparseMatrix(int rows, int cols)  { super(rows, cols);}
-    public  IVector create(int size) {return new SparseVector(size);}//???
+    public  IVector create(int size) {return new SparseVector(size);}
 }
 
