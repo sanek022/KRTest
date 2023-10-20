@@ -1,4 +1,4 @@
-package Labs.L1New;
+package Labs.L2;
 
 public class MatrixStatistics {
     IMatrix matrix;
@@ -10,11 +10,11 @@ public class MatrixStatistics {
     {
         System.out.print("Матрица:");
         System.out.print("\n");
-        for (int i = 0; i < matrix.GetRowsCount(); i++)
+        for (int i = 0; i < matrix.getRowsCount(); i++)
         {
-            for (int j = 0; j < matrix.GetColsCount(); j++)
+            for (int j = 0; j < matrix.getColsCount(); j++)
             {
-                System.out.print(matrix.GetElementFromVector(i,j) + " ");
+                System.out.print(matrix.getElementFromVector(i,j) + " ");
             }
             System.out.print("\n");
         }
@@ -23,11 +23,11 @@ public class MatrixStatistics {
     public int SumValues()
     {
         int sum = 0;
-        for (int i = 0; i < matrix.GetRowsCount(); i++)
+        for (int i = 0; i < matrix.getRowsCount(); i++)
         {
-            for (int j = 0; j < matrix.GetColsCount(); j++)
+            for (int j = 0; j < matrix.getColsCount(); j++)
             {
-                sum += matrix.GetElementFromVector(i,j);
+                sum += matrix.getElementFromVector(i,j);
             }
         }
         return sum;
@@ -35,25 +35,25 @@ public class MatrixStatistics {
     public double AvgValue()
     {
         int sum = 0;
-        for (int i = 0; i < matrix.GetRowsCount(); i++)
+        for (int i = 0; i < matrix.getRowsCount(); i++)
         {
-            for (int j = 0; j < matrix.GetColsCount(); j++)
+            for (int j = 0; j < matrix.getColsCount(); j++)
             {
-                sum += matrix.GetElementFromVector(i,j);
+                sum += matrix.getElementFromVector(i,j);
             }
         }
-        return sum/matrix.GetRowsCount()*matrix.GetColsCount();
+        return sum/matrix.getRowsCount()*matrix.getColsCount();
     }
     public int MaxValue()
     {
         int max = 0;
-        for (int i = 0; i < matrix.GetRowsCount(); i++)
+        for (int i = 0; i < matrix.getRowsCount(); i++)
         {
-            for (int j = 0; j < matrix.GetColsCount(); j++)
+            for (int j = 0; j < matrix.getColsCount(); j++)
             {
-                if(matrix.GetElementFromVector(i,j) > max)
+                if(matrix.getElementFromVector(i,j) > max)
                 {
-                    max = matrix.GetElementFromVector(i,j);
+                    max = matrix.getElementFromVector(i,j);
                 }
             }
         }
@@ -62,11 +62,11 @@ public class MatrixStatistics {
     public int NonZeroCount()
     {
         int count = 0;
-        for (int i = 0; i < matrix.GetRowsCount(); i++)
+        for (int i = 0; i < matrix.getRowsCount(); i++)
         {
-            for (int j = 0; j < matrix.GetColsCount(); j++)
+            for (int j = 0; j < matrix.getColsCount(); j++)
             {
-                if (matrix.GetElementFromVector(i,j) != 0)
+                if (matrix.getElementFromVector(i,j) != 0)
                 {
                     count++;
                 }
