@@ -1,19 +1,19 @@
-package Labs.L1New;
+package Labs.L2;
 
 public abstract class SomeMatrix implements IMatrix {
     private int colsCount, rowsCount;
-    private IVector[] vectors;
-    public int GetColsCount(){
+    protected IVector[] vectors;
+    public int getColsCount(){
         return colsCount;
     }
-    public int GetRowsCount(){
+    public int getRowsCount(){
         return rowsCount;
     }
 
-    public int GetElementFromVector(int row, int col){
+    public int getElementFromVector(int row, int col){
         return vectors[row].getValue(col);
     }
-    public void SetElementInVector(int row, int col, int value){
+    public void setElementInVector(int row, int col, int value){
         vectors[row].setValue(col, value);
     }
 
@@ -31,15 +31,12 @@ public abstract class SomeMatrix implements IMatrix {
 }
 class RegularMatrix extends SomeMatrix {
 public RegularMatrix(int rows, int cols)  {super(rows, cols); }
-public  IVector create(int size){ return new RegularVector(size);}
+public IVector create(int size){ return new RegularVector(size);}
 
 
 }
 class SparseMatrix extends SomeMatrix {
     public SparseMatrix(int rows, int cols)  { super(rows, cols);}
-    public  IVector create(int size)
-    {
-        return new SparseVector(size);
-    }
+    public IVector create(int size) {return new SparseVector(size);}
 }
 

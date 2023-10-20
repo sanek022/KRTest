@@ -1,8 +1,8 @@
-package Labs.L1New;
+package Labs.L2;
 
 public class Start {
     public static void main(String[] args) throws Exception {
-        SparseMatrix sparseMatrix = new SparseMatrix(5,5);
+        /*SparseMatrix sparseMatrix = new SparseMatrix(5,5);
         RegularMatrix regularMatrix = new RegularMatrix(5,5);
         MatrixInitiator.FillMatrix(sparseMatrix, 17, 20);
         MatrixInitiator.FillMatrix(regularMatrix, 10,23);
@@ -11,7 +11,8 @@ public class Start {
         matrixStatisticsSp.ShowMatrix();
         matrixStatisticsReg.ShowMatrix();
         matrixStatisticsSp.FullStat();
-        matrixStatisticsReg.FullStat();
-
+        matrixStatisticsReg.FullStat();*/
+        DrawPlace drawing = new DrawPlace();
+        
     }
 }
