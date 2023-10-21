@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 public class PanelDraw extends DrawPlace {
-    public PanelDraw(){
+  /* public PanelDraw(){
 
         ArrayList<JLabel> labels = new ArrayList<>();
 
@@ -25,7 +25,7 @@ public class PanelDraw extends DrawPlace {
             MatrixStatistics matrixStatisticsReg = new MatrixStatistics(regularMatrix);
             matrixStatisticsReg.ShowMatrix();
             matrixStatisticsReg.FullStat();
-           /* int x = 40;
+           *//* int x = 40;
             for (int i = 0; i < regularMatrix.rowsCount; i++) {
                 for (int j = 0; j < regularMatrix.colsCount; j++) {
                     valueLabels.add(new JLabel(String.valueOf(regularMatrix.GetElementFromVector(i,j))));
@@ -35,7 +35,7 @@ public class PanelDraw extends DrawPlace {
             }
             for (JLabel label : valueLabels){
                 frame.add(label);
-            }*/
+            }*//*
 
         });
 
@@ -50,6 +50,6 @@ public class PanelDraw extends DrawPlace {
             matrixStatisticsSp.ShowMatrix();
             //matrixStatisticsSp.FullStat();
         });
-    }
+    }*/
 
 }

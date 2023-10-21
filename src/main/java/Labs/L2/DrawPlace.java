@@ -5,34 +5,22 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class DrawPlace {
-    public static JFrame frame = new JFrame("Matrix");
-    public static JButton regMatrix = new JButton("RegMatrix");
-    public  static JButton spMatrix = new JButton("SpMatrix");
-    public  static JCheckBox checkBox = new JCheckBox("Draw line");
-    public static JCheckBox consoleBox = new JCheckBox("Console");
-    public static JCheckBox panelCheckBox = new JCheckBox("Panel");
+    JFrame frame = new JFrame("Matrix");
+    private static JCheckBox checkBox = new JCheckBox("Draw line");
+    JButton regMatrix = new JButton("RegMatrix");
+    JButton spMatrix = new JButton("SpMatrix");
+    private static int changer;
     DrawPlace(){
-        JPanel panel = new JPanel();
-        frame.setSize(1280,1024);
-        panel.setBackground(Color.GRAY);
-        panel.setBounds(10,200,1000,1000);
-        frame.add(panel);
+        frame.setSize(750,750);
         regMatrix.setBounds(10,30,100,30);
         spMatrix.setBounds(10,70,100,30);
         checkBox.setBounds(10,110,100,30);
-        consoleBox.setBounds(210,110,100,30);
-        panelCheckBox.setBounds(410,110,100,30);
         frame.setLayout(null);
-        frame.add(regMatrix); frame.add(spMatrix); frame.add(checkBox); frame.add(consoleBox);frame.add(panelCheckBox);
+        frame.add(regMatrix); frame.add(spMatrix); frame.add(checkBox);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        panel.setVisible(true);
         frame.setVisible(true);
-
-
         regMatrix.addActionListener(a -> {
-            panel.removeAll();
-            ArrayList<Point> points = new ArrayList<>(4);
+            //matrixPanel.removeAll();
             ArrayList<JLabel> valueLabels = new ArrayList<>();
             RegularMatrix regularMatrix = new RegularMatrix(5,5);
             try {
@@ -40,6 +28,11 @@ public class DrawPlace {
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
+            MatrixStatistics matrixStatisticsReg = new MatrixStatistics(regularMatrix);
+            MatrixPanel matrixPanel = new MatrixPanel();
+            PanelMaker(matrixPanel);
+            matrixPanel.getMatrix(regularMatrix);
+            changer = String.valueOf(matrixStatisticsReg.MaxValue()).length();
             int x = 100;
             int counter = 0;
             for (int i = 0; i < regularMatrix.getRowsCount(); i++) {
@@ -48,21 +41,20 @@ public class DrawPlace {
                     valueLabels.get(counter).setBounds(x,(200+j*12),50,10);
                     counter++;
                 }
-                x+=55;
+                x+= changer*10;
             }
             for (JLabel label : valueLabels){
-                panel.add(label);
-                panel.repaint();
-
+                matrixPanel.add(label);
             }
-            MatrixStatistics matrixStatisticsReg = new MatrixStatistics(regularMatrix);
+            matrixPanel.repaint();
+
             matrixStatisticsReg.ShowMatrix();
             /*MatrixStatistics matrixStatisticsReg = new MatrixStatistics(regularMatrix);
             matrixStatisticsReg.ShowMatrix();
             matrixStatisticsReg.FullStat();*/
         });
         spMatrix.addActionListener(a -> {
-            panel.removeAll();
+            //matrixPanel.removeAll();
             ArrayList<JLabel> valueLabels = new ArrayList<>();
             SparseMatrix sparseMatrix = new SparseMatrix(5,5);
             try {
@@ -70,6 +62,10 @@ public class DrawPlace {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+            MatrixStatistics matrixStatisticsSp = new MatrixStatistics(sparseMatrix);
+            MatrixPanel matrixPanel = new MatrixPanel();
+            PanelMaker(matrixPanel);
+            changer = String.valueOf(matrixStatisticsSp.MaxValue()).length();
             int x = 100;
             int counter = 0;
             for (int i = 0; i < sparseMatrix.getRowsCount(); i++) {
@@ -80,31 +76,47 @@ public class DrawPlace {
                     counter++;
                     }
                 }
-                x+=55;
+                x+=changer * 10;
             }
-
+            matrixPanel.getMatrix(sparseMatrix);
             for (JLabel label : valueLabels){
-                Rectangle rectangle = new Rectangle();
-
-                panel.add(label);
-                panel.repaint();
-                rectangle.setBounds(100, 200,
-                        50* sparseMatrix.getColsCount(),10*sparseMatrix.getRowsCount());
-
-                panel.repaint(rectangle);
-
+                  matrixPanel.add(label);
             }
-            MatrixStatistics matrixStatisticsSp = new MatrixStatistics(sparseMatrix);
+            matrixPanel.repaint();
             matrixStatisticsSp.ShowMatrix();
             //matrixStatisticsSp.FullStat();
         });
     }
+    public static int getChanger(){
+        return changer;
+    }
+    public static boolean isSelected(){
+        return checkBox.isSelected();
+    }
+
+    private void PanelMaker(JPanel jPanel){
+
+        jPanel.setBackground(Color.GRAY);
+        jPanel.setBounds(10,200,500,500);
+        frame.add(jPanel, BorderLayout.CENTER);
+        jPanel.setVisible(true);
+    }
 }
 class MatrixPanel extends JPanel{
+    int a = 0; int b = 0;
+    IMatrix matrix;
+    public void getMatrix(IMatrix matrix){
+        this.matrix = matrix;
+    }
     @Override
-    public void paintComponents(Graphics g) {
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
-
+        if(DrawPlace.isSelected()){
+        g2.setColor(Color.black);
+        g2.drawRect(97, 200,
+                10* DrawPlace.getChanger()* matrix.getColsCount()-1,10*(matrix.getRowsCount()+1));
+        }
     }
 }
 
