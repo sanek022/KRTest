@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 public class ConsoleDraw extends DrawPlace{
-    ConsoleDraw(){
+   /* ConsoleDraw(){
 
         regMatrix.addActionListener(a -> {
             RegularMatrix regularMatrix = new RegularMatrix(5,5);
@@ -29,5 +29,5 @@ public class ConsoleDraw extends DrawPlace{
             matrixStatisticsSp.ShowMatrix();
             //matrixStatisticsSp.FullStat();
         });
-    }
+    }*/
 }
