@@ -6,21 +6,19 @@ public class MatrixStatistics {
     {
         this.matrix = matrix;
     }
-    public void ShowMatrix()
+    public void showMatrix()
     {
         System.out.print("Матрица:");
         System.out.print("\n");
-        for (int i = 0; i < matrix.getRowsCount(); i++)
-        {
-            for (int j = 0; j < matrix.getColsCount(); j++)
-            {
+        for (int i = 0; i < matrix.getRowsCount(); i++) {
+            for (int j = 0; j < matrix.getColsCount(); j++) {
                 System.out.print(matrix.getElementFromVector(i,j) + " ");
             }
             System.out.print("\n");
         }
         System.out.print("\n");
     }
-    public int SumValues()
+    public int sumValues()
     {
         int sum = 0;
         for (int i = 0; i < matrix.getRowsCount(); i++)
@@ -32,7 +30,7 @@ public class MatrixStatistics {
         }
         return sum;
     }
-    public double AvgValue()
+    public double avgValue()
     {
         int sum = 0;
         for (int i = 0; i < matrix.getRowsCount(); i++)
@@ -44,7 +42,7 @@ public class MatrixStatistics {
         }
         return sum/matrix.getRowsCount()*matrix.getColsCount();
     }
-    public int MaxValue()
+    public int maxValue()
     {
         int max = 0;
         for (int i = 0; i < matrix.getRowsCount(); i++)
@@ -59,7 +57,7 @@ public class MatrixStatistics {
         }
         return max;
     }
-    public int NonZeroCount()
+    public int nonZeroCount()
     {
         int count = 0;
         for (int i = 0; i < matrix.getRowsCount(); i++)
@@ -74,10 +72,10 @@ public class MatrixStatistics {
         }
         return count;
     }
-    public void FullStat(){
-        System.out.println("Макс. начение: " + MaxValue());
-        System.out.println("Сумма всех элементов: " + SumValues());
-        System.out.println("Среднее арифметическое по элементам: " + AvgValue());
-        System.out.println("Число ненулевых элементов: " + NonZeroCount());
+    public void fullStat(){
+        System.out.println("Макс. начение: " + maxValue());
+        System.out.println("Сумма всех элементов: " + sumValues());
+        System.out.println("Среднее арифметическое по элементам: " + avgValue());
+        System.out.println("Число ненулевых элементов: " + nonZeroCount());
     }
 }
