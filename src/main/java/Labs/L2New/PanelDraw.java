@@ -1,4 +1,4 @@
-package Labs.L2;
+package Labs.L2New;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class PanelDraw extends DrawPlace {
     public static int getChanger(){
         return changer;
     }
-    public void regDraw(){
+    /*public void regDraw(){
 
         RegularMatrix regularMatrix = new RegularMatrix(5,5);
         try {
@@ -43,9 +43,9 @@ public class PanelDraw extends DrawPlace {
         matrixPanel.repaint();
 
        // matrixStatisticsReg.showMatrix();
-            /*MatrixStatistics matrixStatisticsReg = new MatrixStatistics(regularMatrix);
+            *//*MatrixStatistics matrixStatisticsReg = new MatrixStatistics(regularMatrix);
             matrixStatisticsReg.ShowMatrix();
-            matrixStatisticsReg.FullStat();*/
+            matrixStatisticsReg.FullStat();*//*
   }
   public void spDraw(){
       ArrayList<JLabel> valueLabels = new ArrayList<>();
@@ -79,6 +79,6 @@ public class PanelDraw extends DrawPlace {
       //matrixStatisticsSp.showMatrix();
       //matrixStatisticsSp.FullStat();
 
-  }
+  }*/
 
 }

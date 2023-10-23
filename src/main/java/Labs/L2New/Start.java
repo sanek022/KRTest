@@ -1,4 +1,4 @@
-package Labs.L2;
+package Labs.L2New;
 
 public class Start {
     public static void main(String[] args) throws Exception {
