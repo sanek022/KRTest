@@ -1,16 +1,14 @@
-package Labs.L2;
+package Labs.L2New;
 
-public class ConsoleDraw extends DrawPlace{
+public class ConsoleDraw extends DrawPlace {
+    IMatrix matrix;
 
-    ConsoleDraw(){}
+    ConsoleDraw(IMatrix matrix){
+        this.matrix = matrix;
+    }
 
-        public void regDraw(){
-            RegularMatrix regularMatrix = new RegularMatrix(5,5);
-            try {
-                MatrixInitiator.FillMatrix(regularMatrix, 10,23);
-            } catch (Exception ex) {
-                throw new RuntimeException(ex);
-            }
+        /*public void regDraw(){
+
             MatrixStatistics matrixStatisticsReg = new MatrixStatistics(regularMatrix);
             int maxLength = String.valueOf(matrixStatisticsReg.maxValue()).length();
             System.out.println("Матрица:");
@@ -35,9 +33,9 @@ public class ConsoleDraw extends DrawPlace{
 
 
             //matrixStatisticsReg.showMatrix();
-            /*MatrixStatistics matrixStatisticsReg = new MatrixStatistics(regularMatrix);
+            *//*MatrixStatistics matrixStatisticsReg = new MatrixStatistics(regularMatrix);
             matrixStatisticsReg.ShowMatrix();
-            matrixStatisticsReg.FullStat();*/
+            matrixStatisticsReg.FullStat();*//*
         }
         public void spDraw(){
 
@@ -78,7 +76,7 @@ public class ConsoleDraw extends DrawPlace{
             //matrixStatisticsSp.showMatrix();
             //matrixStatisticsSp.FullStat();
 
-    }
+    }*/
 }
 
 

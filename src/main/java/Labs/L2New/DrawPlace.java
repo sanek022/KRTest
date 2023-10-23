@@ -1,4 +1,4 @@
-package Labs.L2;
+package Labs.L2New;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,7 +8,7 @@ public class DrawPlace {
     private static JCheckBox lineCheckBox = new JCheckBox("Draw line");
     private static JCheckBox consoleCheck = new JCheckBox("Console");
     private static JCheckBox panelCheck = new JCheckBox("Panel");
-
+/*
     DrawPlace(){
         JButton regMatrix = new JButton("RegMatrix");
         JButton spMatrix = new JButton("SpMatrix");
@@ -23,12 +23,18 @@ public class DrawPlace {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         regMatrix.addActionListener(a -> {
+            RegularMatrix regularMatrix = new RegularMatrix(5,5);
+            try {
+                MatrixInitiator.FillMatrix(regularMatrix, 10,23);
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
             if(consoleCheck.isSelected()){
-                ConsoleDraw consoleDraw = new ConsoleDraw();
+                ConsoleDraw consoleDraw = new ConsoleDraw(regularMatrix );
                 consoleDraw.regDraw();
             }
             if(panelCheck.isSelected()){
-            PanelDraw panelDraw = new PanelDraw();
+            PanelDraw panelDraw = new PanelDraw(regularMatrix);
             panelDraw.regDraw();
             }
             //matrixPanel.removeAll();
@@ -75,6 +81,6 @@ class MatrixPanel extends JPanel{
         g2.drawRect(97, 200,
                 10* PanelDraw.getChanger()* matrix.getColsCount()-1,10*(matrix.getRowsCount()+1));
         }
-    }
+    }*/
 }
 
