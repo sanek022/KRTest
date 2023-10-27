@@ -12,8 +12,10 @@ public class ConsoleDraw extends DrawPlace {
             MatrixStatistics matrixStatisticsReg = new MatrixStatistics(matrix);
             int maxLength = String.valueOf(matrixStatisticsReg.maxValue()).length();
             System.out.println("Матрица:");
-            for (int i = 0; i < matrix.getRowsCount()*(maxLength +2) + 2; i++) {
-                System.out.print("_");
+            if(lineIsSelected()){
+                for (int i = 0; i < matrix.getRowsCount()*(maxLength +2) + 2; i++) {
+                    System.out.print("_");
+                }
             }
             System.out.println();
             for (int i = 0; i < matrix.getRowsCount(); i++) {
@@ -27,8 +29,10 @@ public class ConsoleDraw extends DrawPlace {
                 System.out.println("|");
                 }else System.out.println();
             }
-            for (int i = 0; i < matrix.getRowsCount()*(maxLength +2) + 2; i++) {
-                System.out.print("_");
+            if(lineIsSelected()){
+                for (int i = 0; i < matrix.getRowsCount()*(maxLength +2) + 2; i++) {
+                    System.out.print("_");
+                }
             }
             System.out.println();
         }
@@ -36,8 +40,10 @@ public class ConsoleDraw extends DrawPlace {
             MatrixStatistics matrixStatisticsSp = new MatrixStatistics(matrix);
             int maxLength = String.valueOf(matrixStatisticsSp.maxValue()).length();
             System.out.println("Матрица:");
-            for (int i = 0; i < matrix.getRowsCount()*(maxLength +2) + 2; i++) {
-                System.out.print("_");
+            if(lineIsSelected()){
+                for (int i = 0; i < matrix.getRowsCount()*(maxLength +2) + 2; i++) {
+                    System.out.print("_");
+                }
             }
             System.out.println();
             for (int i = 0; i < matrix.getRowsCount(); i++) {
@@ -53,10 +59,12 @@ public class ConsoleDraw extends DrawPlace {
                 }
                 if (lineIsSelected()){
                     System.out.println("|");
-                }
+                }else System.out.println();
             }
-            for (int i = 0; i < matrix.getRowsCount()*(maxLength +2) + 2; i++) {
-                System.out.print("_");
+            if(lineIsSelected()){
+                for (int i = 0; i < matrix.getRowsCount()*(maxLength +2) + 2; i++) {
+                    System.out.print("_");
+                }
             }
             System.out.println();
     }

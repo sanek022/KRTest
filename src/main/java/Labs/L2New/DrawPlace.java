@@ -12,7 +12,7 @@ public class DrawPlace {
     DrawPlace(){
         JButton regMatrix = new JButton("RegMatrix");
         JButton spMatrix = new JButton("SpMatrix");
-        frame.setSize(750,750);
+        frame.setSize(500,600);
         regMatrix.setBounds(10,30,100,30);
         spMatrix.setBounds(10,70,100,30);
         lineCheckBox.setBounds(10,110,100,30);
