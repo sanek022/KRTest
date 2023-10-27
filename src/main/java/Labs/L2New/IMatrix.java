@@ -1,6 +1,7 @@
 package Labs.L2New;
 
 public interface IMatrix {
+    public void draw();
     public int getColsCount();
     public int getRowsCount();
 

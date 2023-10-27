@@ -12,7 +12,20 @@ public class Start {
         matrixStatisticsReg.ShowMatrix();
         matrixStatisticsSp.FullStat();
         matrixStatisticsReg.FullStat();*/
-        DrawPlace drawing = new DrawPlace();
+        IDrawer drawer = new ConsoleDraw();
+        IMatrix matrix = new RegularMatrix(5,5,drawer);
+        try {
+            MatrixInitiator.FillMatrix(matrix, 17,20);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        MatrixStatistics matrixStatistics = new MatrixStatistics(matrix);
+        matrixStatistics.showMatrix();
+        matrix.draw();
+
+
+
+        //DrawPlace drawing = new DrawPlace();
 
         
     }
