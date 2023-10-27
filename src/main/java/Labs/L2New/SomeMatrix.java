@@ -3,6 +3,7 @@ package Labs.L2New;
 public abstract class SomeMatrix implements IMatrix {
     private int colsCount, rowsCount;
     protected IVector[] vectors;
+    IDrawer drawer;
     public int getColsCount(){
         return colsCount;
     }

@@ -14,8 +14,6 @@ public class PanelDraw extends DrawPlace {
         return changer;
     }
     public void regDraw(){
-
-        
         ArrayList<JLabel> valueLabels = new ArrayList<>();
         MatrixStatistics matrixStatisticsReg = new MatrixStatistics(matrix);
         MatrixPanel matrixPanel = new MatrixPanel();
@@ -34,6 +32,7 @@ public class PanelDraw extends DrawPlace {
         }
         for (JLabel label : valueLabels){
             matrixPanel.add(label);
+
         }
         matrixPanel.repaint();
 
@@ -44,7 +43,6 @@ public class PanelDraw extends DrawPlace {
   }
   public void spDraw(){
       ArrayList<JLabel> valueLabels = new ArrayList<>();
-      
       MatrixStatistics matrixStatisticsSp = new MatrixStatistics(matrix);
       MatrixPanel matrixPanel = new MatrixPanel();
       PanelMaker(matrixPanel);
